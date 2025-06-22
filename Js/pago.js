@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (listaProductos) {
             listaProductos.innerHTML = `
                 <div class="alert alert-warning">
-                    No hay productos en el carrito. <a href="index.html">Volver a la tienda</a>
+                    No hay productos en el carrito. <a href="../index.html">Volver a la tienda</a>
                 </div>
             `;
         }
