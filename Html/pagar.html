@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - MacShoes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/stylos.css">
+
+</head>
+<body>
+<!-- Barra de Navegación -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="../img/logo-ms.jpg" alt="MacShoes" class="me-2 border border-warning-subtle" style="height: 50px; padding: 2px;">
+            <span>MacShoes</span>
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-arrow-left me-1"></i> Volver a la tienda
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenido Principal -->
+<div class="container mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Resumen de Compra -->
+            <div class="cotainer-fluid">
+                <div class="card-header">
+                    <h4 class="mb-0"><i class="fas fa-receipt me-2"></i>Resumen de tu compra</h4>
+                </div>
+                <div class="card-body p-0">
+                    <div id="lista-productos" class="px-3 pt-2">
+                        <!-- Los productos se cargarán aquí dinámicamente -->
+                    </div>
+
+                    <div class="row mt-2 mx-0">
+                        <div class="col-md-6 offset-md-6 px-3 pb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Subtotal:</span>
+                                <span id="subtotal" class="precio">$0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Impuestos (19%):</span>
+                                <span id="impuestos" class="precio">$0</span>
+                            </div>
+                            <div class="d-flex justify-content-between total-row">
+                                <strong>Total a pagar:</strong>
+                                <strong id="total-pagar" class="precio">$0</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información del Cliente -->
+            <div class="container-fluid">
+                <div class="card-header">
+                    <h4 class="mb-0"><i class="fas fa-user me-2"></i>Información del Cliente</h4>
+                </div>
+                <div class="card-body">
+                    <form id="formulario-cliente" class="needs-validation" novalidate>
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombre Completo*</label>
+                                <input type="text" class="form-control form-control-sm" id="nombre" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingresa tu nombre completo
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label">Teléfono*</label>
+                                <input type="tel" class="form-control form-control-sm" id="telefono" required
+                                       pattern="[0-9]{7,15}" placeholder="Ej: 3001234567">
+                                <div class="invalid-feedback">
+                                    Teléfono inválido (7-15 dígitos)
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="email" class="form-label">Correo Electrónico*</label>
+                                <input type="email" class="form-control form-control-sm" id="email" required
+                                       placeholder="ejemplo@correo.com">
+                                <div class="invalid-feedback">
+                                    Por favor ingresa un correo válido
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="direccion" class="form-label">Dirección de Envío*</label>
+                                <textarea class="form-control form-control-sm" id="direccion" rows="2" required
+                                          placeholder="Calle, número, ciudad, departamento"></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor ingresa una dirección válida
+                                </div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terminos" required>
+                                    <label class="form-check-label small" for="terminos">
+                                        Acepto los <a href="#" data-bs-toggle="modal" data-bs-target="#terminosModal">términos y condiciones</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Debes aceptar los términos para continuar
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Método de Pago -->
+            <div class="container-fluid">
+                <div class="card-header">
+                    <h4 class="mb-0"><i class="fas fa-credit-card me-2"></i>Método de Pago</h4>
+                </div>
+                <div class="card-body">
+                    <div class="metodo-pago">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="metodoPago" id="tarjeta" checked>
+                            <label class="form-check-label" for="tarjeta">
+                                <i class="far fa-credit-card me-2"></i> Tarjeta crédito/débito
+                            </label>
+                        </div>
+                    </div>
+                    <div class="metodo-pago">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="metodoPago" id="transferencia">
+                            <label class="form-check-label" for="transferencia">
+                                <i class="fas fa-university me-2"></i> Transferencia bancaria
+                            </label>
+                        </div>
+                    </div>
+
+                    <button id="terminar-pago" class="btn btn-success w-100 mt-3 py-2">
+                        <i class="fas fa-check-circle me-2"></i> Confirmar y pagar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Términos y Condiciones -->
+<div class="modal fade" id="terminosModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title">Términos y Condiciones</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>Política de Envíos</h6>
+                <p>Los envíos se realizan dentro de un plazo de 3-5 días hábiles después de confirmado el pago. El costo de envío será calculado al finalizar la compra.</p>
+
+                <h6 class="mt-4">Política de Devoluciones</h6>
+                <p>Aceptamos devoluciones dentro de los 15 días posteriores a la recepción del producto. El producto debe estar en su empaque original y sin señales de uso.</p>
+
+                <h6 class="mt-4">Privacidad</h6>
+                <p>Tu información personal será utilizada únicamente para procesar tu pedido y no será compartida con terceros. Protegemos tus datos según las leyes de protección de datos personales.</p>
+
+                <h6 class="mt-4">Garantía</h6>
+                <p>Todos nuestros productos tienen garantía de 3 meses contra defectos de fabricación. La garantía no cubre daños por mal uso.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Confirmación -->
+<div class="modal fade" id="confirmacionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title"><i class="fas fa-check-circle me-2"></i>¡Pago exitoso!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center py-4">
+                <div class="mb-3">
+                    <i class="fas fa-check-circle text-success" style="font-size: 4rem;"></i>
+                </div>
+                <h4 class="mb-3">Gracias por tu compra</h4>
+                <p class="text-muted">Tu pedido #<span id="numero-pedido"></span> ha sido procesado exitosamente.</p>
+
+                <div class="text-start mt-4 p-3 bg-light rounded" id="resumen-envio">
+                    <!-- Información de envío se insertará aquí -->
+                </div>
+
+                <p class="text-muted mt-3">Recibirás un correo con los detalles de tu compra.</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-success px-4" data-bs-dismiss="modal" id="volver-inicio">
+                    <i class="fas fa-home me-2"></i>Volver al inicio
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script de pago -->
+<script src="../Js/pago.js"></script>
+</body>
+</html>

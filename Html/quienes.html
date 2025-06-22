@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacShoes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- Barra de Navegación con Dropdown del Carrito -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="../img/logo-ms.jpg" alt="MacShoes" class="me-2" style="height: 50px; border: 2px solid #fff; padding: 2px;">
+        </a>
+        <a class="navbar-brand" href="#">MacShoes</a>
+
+        <!-- Botón para móviles -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenido colapsable -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <!-- Menú principal (izquierda) -->
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="quienes.html">Quiénes Somos</a>
+                </li>
+            </ul>
+
+            <!-- Menú derecho (Contáctenos + Carrito) -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="contactenos.html">Contáctenos</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <!-- Botón del Carrito con badge -->
+                    <a class="nav-link dropdown-toggle position-relative" href="#" id="dropdownCarrito" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                    <!-- Dropdown del Carrito -->
+                    <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="dropdownCarrito" style="width: 300px;">
+                        <h5 class="dropdown-header">Tu Carrito</h5>
+                        <div id="lista-carrito" class="mb-2"></div>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <strong>Total:</strong>
+                            <span id="total" class="fw-bold">$0.00</span>
+                        </div>
+                        <button id="pagar-carrito" class="btn btn-success btn-sm w-100 mb-2">Pagar</button>
+                        <button id="vaciar-carrito" class="btn btn-danger btn-sm w-100">Vaciar Carrito</button>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container text-center shadow p-3 mb-5 bg-body-tertiary">
+        <h1 class="h1">Quienes Somos...</h1>
+    </div>
+
+    <div class="container text-center">
+        <div class="row justify-content-start">
+            <div class="col-sm-4">
+                <img class="rounded float-start img-fluid" src="/img/logo-ms.jpg" alt="MacShoes" >
+            </div>
+            <div class="col-sm-8">
+                <div class="container-lg text-justify shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <p class="text-start"><strong>MacShoes</strong> es una empresa dedicada a la venta de calzado de alta calidad, ofreciendo una amplia variedad de estilos y diseños para satisfacer las necesidades de nuestros clientes.</p>
+                    <p class="text-start">Desde su fundación en 2024, hemos tejido su legado con hilos de elegancia, innovación y propósito.
+                        Nacida como una visión digital que fusionaba diseño atemporal con comodidad contemporánea, la marca conquistó corazones con su primera colección de zapatos versátiles,
+                        donde cada par contaba una historia de artesanía detallista.
+                        Para 2026, ya era sinónimo de sofisticación accesible, incorporando materiales sostenibles sin comprometer su esencia refinada,
+                        mientras expandía su presencia global con la misma delicadeza con la que diseña sus líneas. Hoy, mirando al futuro.</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container text-center">
+            <div class="row justify-content-start">
+                <div class="col-sm-4 border border-warning-subtle bg-dark bg-gradient text-white" style="--bs-bg-opacity: .5;">
+                    <h3 class="h3">Misión</h3>
+                    <p class="text-start">
+                        Ofrecer calzado de alta calidad, combinando estilo, comodidad y tendencias actuales para hombres y mujeres que buscan elegancia, versatilidad y confort en su día a día.
+                        Nos enfocamos en una experiencia de compra en línea sencilla, con productos duraderos, diseños innovadores y un servicio al cliente excepcional.
+                    </p>
+                </div>
+                <div class="col-sm-4 border border-warning-subtle bg-dark bg-gradient text-white" style="--bs-bg-opacity: .5;">
+                    <h3 class="h3">Visión</h3>
+                    <p class="text-start">
+                        Ser la marca líder en venta de calzado casual, elegante y deportivo en línea, reconocida por nuestra calidad, diseño vanguardista y compromiso con la satisfacción del cliente.
+                        Aspiramos a expandirnos internacionalmente, manteniendo siempre la innovación y la responsabilidad social como pilares de nuestro crecimiento.
+                    </p>
+                </div>
+                <div class="col-sm-4 border border-warning-subtle bg-dark bg-gradient text-white" style="--bs-bg-opacity: .5;">
+                    <h3 class="h3">Valores</h3>
+                    <p class="text-start">
+                        En Macshoes, creemos que un gran calzado nace de valores claros: diseño con propósito, comodidad que enamora, servicio que sorprende y un planeta que agradezca nuestros pasos. <strong>No hacemos zapatos... hacemos complicidad con tus pies.</strong>
+                    </p>
+                </div>
+            </div>
+    <br>
+    <footer class="text-center shadow p-3 mb-5 rounded bg-secondary bg-gradient border border-warning-subtle" style="--bs-bg-opacity: .35;">
+        <p class="lead">Mashoes no fabrica calzado, sino emociones que trascienden en el tiempo donde cada paso es una declaración de estilo atemporal y cada diseño un testimonio de excelencia artesanal.
+        </p>
+    </footer>
+</body>
+</html>
