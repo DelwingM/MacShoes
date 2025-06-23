@@ -17,8 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let visitasProductos = JSON.parse(localStorage.getItem('visitasProductos')) || {};
 
     // Inicialización
-    inicializarProductos();
+    /*inicializarProductos();
+    actualizarCarrito();*/
+    // Inicialización básica del carrito en todas las páginas
     actualizarCarrito();
+
+    // Solo inicializar productos si estamos en la página de productos (index.html)
+    if (elements.contenedorProductos) {
+        inicializarProductos();
+        setupEventListeners();
+    } else {
+        // Configurar solo los listeners del carrito para otras páginas
+        if (elements.botonVaciar) elements.botonVaciar.addEventListener('click', vaciarCarrito);
+        if (elements.botonPagar) elements.botonPagar.addEventListener('click', procesarPago);
+    }
+
+
 
     // Configuración de event listeners
     setupEventListeners();
